@@ -1,19 +1,14 @@
 import { NextResponse } from 'next/server';
-import { v4 as uuidv4 } from 'uuid';
 
-export async function POST(request: Request) {
-	const body = await request.json();
-	body.ID = uuidv4();
-
+export async function GET() {
 	const urlGoogleSheet =
 		'https://script.google.com/macros/s/AKfycbxKmwylvbGbcpiaqCSRaM8NYQIuy9-8nabzzTAnhrwAD0ecv7HOswr6aihjcvhm_dc/exec';
 
-	const response = await fetch(`${urlGoogleSheet}?endpoint=simulacion`, {
-		method: 'POST',
+	const response = await fetch(`${urlGoogleSheet}`, {
+		method: 'GET',
 		headers: {
-			'Content-Type': 'application/json',
+			'Cache-Control': 'no-cache',
 		},
-		body: JSON.stringify(body),
 	});
 
 	if (!response.ok) {
@@ -21,10 +16,8 @@ export async function POST(request: Request) {
 	}
 
 	const responseData = await response.json();
-	console.log(responseData);
 
 	return NextResponse.json({
-		statusCode: 200,
-		message: 'Calculo registrado exitosamente',
+		count: responseData.data,
 	});
 }
