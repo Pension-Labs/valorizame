@@ -1,0 +1,59 @@
+#root {
+	width: 100%;
+	height: 100%;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+}
+.main-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	max-width: 700px;
+}
+.visits {
+	text-align: right;
+	align-self: flex-end;
+}
+h1 {
+	font-size: 1.6em;
+	text-decoration: underline;
+	text-align: center;
+}
+.subtitle {
+	font-size: 0.8em;
+	text-align: center;
+	margin-bottom: 1.5em;
+}
+.form {
+	width: 100%;
+	gap: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 1.5em;
+}
+.form div {
+	width: 100%;
+	max-width: 400px;
+	display: flex;
+	justify-content: space-between;
+}
+.share-container {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+.result {
+	margin-bottom: 1.5em;
+}
+footer {
+	margin-top: 20px;
+}
