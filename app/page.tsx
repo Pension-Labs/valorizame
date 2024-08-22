@@ -21,9 +21,13 @@ export default function Home() {
 		}
 	};
 	useEffect(() => {
-		fetch('/api/Visitas')
+		fetch(
+			'https://script.google.com/macros/s/AKfycbx_-1g2sy0z_renj_iJaZN3EXUbLz-bpj1R_eQmi8szgU6uNlwzbytAeokkEVNWz9v1/exec'
+		)
 			.then(res => res.json())
-			.then(r => setCount(r.count));
+			.then(r => {
+				setCount(r.data);
+			});
 	}, []);
 
 	const handleCalculate = async (e: { preventDefault: () => void }) => {
