@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 
-export async function GEPOSTT() {
+export async function POST() {
 	const urlGoogleSheet =
 		'https://script.google.com/macros/s/AKfycbx_-1g2sy0z_renj_iJaZN3EXUbLz-bpj1R_eQmi8szgU6uNlwzbytAeokkEVNWz9v1/exec';
 

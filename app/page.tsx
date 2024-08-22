@@ -93,7 +93,7 @@ export default function Home() {
 	};
 
 	return (
-		<main className="flex bg-fondo min-h-full flex-col items-center justify-center p-24">
+		<main className="flex w-full bg-fondo min-h-full flex-col items-center justify-center p-10 md:p-24">
 			<div className="w-full max-w-3xl flex flex-col gap-y-4 items-center justify-center text-center font-mono">
 				<span className="text-sm self-end text-white">
 					Contador de visitas: <strong>{count}</strong>
@@ -103,7 +103,7 @@ export default function Home() {
 					Descubre cuánto valdrá tu pensión en el futuro
 				</p>
 				<form className="flex flex-col justify-between items-center w-full gap-2">
-					<div className="flex justify-between w-full max-w-md">
+					<div className="flex flex-col md:flex-row items-center justify-between w-full max-w-md">
 						<label htmlFor="">Ingresa tu inversión</label>
 						<CurrencyInput
 							intlConfig={{ locale: 'es-CL', currency: 'CLP' }}
@@ -117,7 +117,7 @@ export default function Home() {
 							className="w-full max-w-52"
 						/>
 					</div>
-					<div className="flex justify-between w-full max-w-md">
+					<div className="flex flex-col md:flex-row items-center justify-between w-full max-w-md">
 						<label htmlFor="">Rentabilidad esperada</label>
 						<input
 							type="number"
@@ -126,7 +126,7 @@ export default function Home() {
 							onChange={e => setInteres(Number(parseInt(e.target.value)))}
 						/>
 					</div>
-					<div className="flex justify-between w-full max-w-md">
+					<div className="flex flex-col md:flex-row items-center justify-between w-full max-w-md">
 						<label htmlFor="">Periodo de tiempo</label>
 						<input
 							type="number"
