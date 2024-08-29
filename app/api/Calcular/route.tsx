@@ -6,7 +6,7 @@ export async function POST(request: Request) {
 
 	const body = await request.json();
 	body.ID = uuidv4();
-	console.log(body);
+	const { INVERSION, INTERES, TIEMPO, RESULTADO } = body;
 
 	const urlGoogleSheet =
 		'https://script.google.com/macros/s/AKfycbxKmwylvbGbcpiaqCSRaM8NYQIuy9-8nabzzTAnhrwAD0ecv7HOswr6aihjcvhm_dc/exec';
@@ -23,7 +23,10 @@ export async function POST(request: Request) {
 		if (!response.ok) {
 			throw new Error('Network response was not ok');
 		}
+		const sender = { name: 'Mauro', email: 'mauro@pensionfi.com' };
+		const message = `<html><body><h1>Nueva simulacion</h1><p>Inversion: ${INVERSION}</p><p>Interes: ${INTERES}</p><p>Tiempo: ${TIEMPO}</p><p>Resultado: ${RESULTADO}</p></body></html>`;
 
+		// await sendMail(sender, message, 'Nueva simulacion');
 		const responseData = await response.json();
 		console.log(responseData);
 

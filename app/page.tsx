@@ -1,5 +1,5 @@
 'use client';
-
+import Script from 'next/script';
 import { useState, useRef, useEffect } from 'react';
 import CurrencyInput from 'react-currency-input-field';
 import ShareSection from './_components/ShareSection';
